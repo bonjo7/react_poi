@@ -1,0 +1,19 @@
+.card{
+    margin-top: 25px; 
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 10px;
+}
+
+.card a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#0060B6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+
