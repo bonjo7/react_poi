@@ -9,7 +9,7 @@ export default class PoiItem extends Component {
   render() {
 
     return (
-      <Card className="text-center w-25 shadow lg p-3 mb-5">
+      <Card className="text-center shadow lg p-3 mb-5">
         <Card.Header>{` ${this.props.poi.type}`}</Card.Header>
         <Card.Body>
           <Card.Title>{` ${this.props.poi.title}`}</Card.Title>

@@ -4,6 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import POICreate from '../src/components/poiCreate';
 import POIItem from '../src/components/poiItem';
 import POIList from '../src/components/poiList';
+import CarouselHeader from '../src/components/carouselHeader'; 
 
 const poi = {
     id: 1 ,
@@ -17,6 +18,7 @@ const poi = {
     upvotes: 1 
 };
 
+storiesOf("POI APP/Carousel", module).add("default", () => <CarouselHeader />);
 
 storiesOf("POI APP/Create POI", module).add("default", () => <POICreate />);
 

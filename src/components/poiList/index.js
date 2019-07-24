@@ -7,7 +7,7 @@ export default class PoiList extends Component {
       <PoiItem key={p.title} poi={p} />
     ));
     return (
-      <div className="container-fluid contacts bg-info">
+      <div className="container-fluid">
         <div className="row">{poiCards}</div>
       </div>
     );
