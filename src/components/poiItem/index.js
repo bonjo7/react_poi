@@ -6,6 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 export default class PoiItem extends Component {
+
+  handleVote = () =>  this.props.upvoteHandler(this.props.poi.id);
+
   render() {
 
     return (
@@ -18,7 +21,7 @@ export default class PoiItem extends Component {
             {this.props.poi.description}
           </Card.Text>
           <ul class="list-group list-group-horizontal">
-            <li class="list-group-item"><FontAwesomeIcon icon={["fas", "heart"]} color="red" size="md" />
+            <li class="list-group-item" onClick={this.handleVote}><FontAwesomeIcon icon={["fas", "heart"]} color="red" size="md" />
               {` ${this.props.poi.upvotes}`} - Recommends</li>
             <li class="list-group-item"><a href="/"><FontAwesomeIcon icon={["fas", "comments"]} color="blue" size="lg" /> - Comments</a> </li>
           </ul>

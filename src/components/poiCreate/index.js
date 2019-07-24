@@ -4,11 +4,12 @@ import './poiCreate.css';
 
 export default class poiCreate extends Component {
   render() {
+    // state = { type, image, name, author, description, latitute, longitude, admission };
     return (
       <Form className="form shadow lg p-3 mb-5 bg-white rounded">
         <h3>Create POI</h3>
 
-        <Form.Group as={Col} controlId="formGridType">
+        <Form.Group as={Col} controlId="type">
           <Form.Label>Attraction Type</Form.Label>
           <Form.Control as="select"  >
             <option>Choose...</option>
@@ -21,23 +22,23 @@ export default class poiCreate extends Component {
           </Form.Control>
         </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridName">
+        <Form.Group as={Col} controlId="name">
           <Form.Label>Attraction Name</Form.Label>
           <Form.Control placeholder="Attraction Name" />
         </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridDescription">
+        <Form.Group as={Col} controlId="description">
           <Form.Label>Description</Form.Label>
           <Form.Control placeholder="Enter Description" />
         </Form.Group>
 
         <Form.Row>
-          <Form.Group as={Col} controlId="formGridLatitude">
+          <Form.Group as={Col} controlId="latitude">
             <Form.Label>Latitude</Form.Label>
             <Form.Control placeholder="0.000000" />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridLongitude">
+          <Form.Group as={Col} controlId="longitude">
             <Form.Label>Longitude</Form.Label>
             <Form.Control placeholder="0.000000" />
           </Form.Group>
@@ -52,19 +53,19 @@ export default class poiCreate extends Component {
         <Form.Check
           type="radio"
           label="Yes"
-          name="formHorizontalRadios"
+          name="admission"
           id="formHorizontalRadios1"
         />
         <Form.Check
           type="radio"
           label="No"
-          name="formHorizontalRadios"
+          name="admission"
           id="formHorizontalRadios2"
         />
         <Form.Check
           type="radio"
           label="Voluntary"
-          name="formHorizontalRadios"
+          name="admission"
           id="formHorizontalRadios3"
         />
       </Col>

@@ -5,6 +5,7 @@ import POICreate from '../src/components/poiCreate';
 import POIItem from '../src/components/poiItem';
 import POIList from '../src/components/poiList';
 import CarouselHeader from '../src/components/carouselHeader'; 
+import { action } from "@storybook/addon-actions";
 
 const poi = {
     id: 1 ,
@@ -22,7 +23,7 @@ storiesOf("POI APP/Carousel", module).add("default", () => <CarouselHeader />);
 
 storiesOf("POI APP/Create POI", module).add("default", () => <POICreate />);
 
-storiesOf('POI APP/POI Item', module).add('list a single POI', () => <POIItem poi= { poi }  />
+storiesOf('POI APP/POI Item', module).add('list a single POI', () => <POIItem poi= { poi } upvoteHandler={action("upvoted")}  />
     )
 
 storiesOf('POI APP/POI List', module).add('A list of POIs',() => { 
