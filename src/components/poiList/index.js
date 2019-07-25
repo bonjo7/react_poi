@@ -9,10 +9,6 @@ export default class PoiList extends Component {
               poi={poi} 
               upvoteHandler={this.props.upvoteHandler} /> 
       );
-     
-    // const poiCards = this.props.poi.map(p => (
-    //   <PoiItem key={p.title} poi={p} />
-    // ));
     return (
       <div className="container-fluid">
         <div className="row">{poiCards}</div>
