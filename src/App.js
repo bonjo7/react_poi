@@ -4,6 +4,7 @@ import CarouselHeader from './components/carouselHeader';
 import API from './dataStore/stubAPI';
 import AddPOI from './components/poiCreate';
 import _ from 'lodash';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default class App extends Component {
   addPoi = (type, name, author, description, latitute, longitude, admission) => {
@@ -20,12 +21,18 @@ export default class App extends Component {
     let pois = _.sortBy(API.getAll(), poi => -poi.upvotes);
 
     return (
-      <div className="jumbotron">
-        <CarouselHeader />
-        <POIList poi={pois}
-          upvoteHandler={this.incrementUpvote} />
-          <AddPOI handleAdd={this.addPoi} />
-      </div>
+      <Container>
+        <Row>         
+        <CarouselHeader />        
+        </Row>
+        <Row>
+        <POIList poi={pois} upvoteHandler={this.incrementUpvote} />              
+        </Row>
+        <Row>
+          <AddPOI handleAdd={this.addPoi} />          
+        </Row>
+      </Container> 
     );
   }
 }
+

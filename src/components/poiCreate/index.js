@@ -3,6 +3,8 @@ import { Form, Col, Button, Row } from 'react-bootstrap';
 import './poiCreate.css';
 
 export default class poiCreate extends Component {
+
+  
   
   state = { type: '', name: '', author: '', description: '', latitute: '', longitude: '', admission: '' };
   
@@ -23,6 +25,7 @@ export default class poiCreate extends Component {
   render() {
 
     return (
+      
       <Form className="form shadow lg p-3 mb-5 bg-white rounded">
         <h3>Create POI</h3>
 

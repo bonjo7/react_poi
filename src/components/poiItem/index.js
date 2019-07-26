@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './poiItem.css';
 import "../../fontawesome";
-import { Card } from 'react-bootstrap';
+import { Card} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -20,11 +20,18 @@ export default class PoiItem extends Component {
           <Card.Text>
             {this.props.poi.description}
           </Card.Text>
-          <ul className="list-group list-group-horizontal">
-            <li className="list-group-item" onClick={this.handleVote}><FontAwesomeIcon icon={["fas", "heart"]} color="red" size="sm" />
-              {` ${this.props.poi.upvotes}`} - Recommends</li>
-            <li className="list-group-item"><a href="/"><FontAwesomeIcon icon={["fas", "comments"]} color="blue" size="lg" /> - Comments</a> </li>
-          </ul>
+
+      <Card.Link onClick={this.handleVote}><FontAwesomeIcon icon={["fas", "heart"]} color="red" size="lg" />
+              {` ${this.props.poi.upvotes}`}</Card.Link>
+             
+              <Card.Link href="/"><FontAwesomeIcon icon={["fas", "comments"]} color="#24a1f5" size="lg" /> </Card.Link>
+
+              <Card.Link><FontAwesomeIcon icon={["fas", "edit"]} color="#9bd4e4" size="lg" /> </Card.Link>
+
+              <Card.Link><FontAwesomeIcon icon={["fas", "trash-alt"]} color="red" size="lg" /> </Card.Link>
+             
+          
+          
         </Card.Body>
         <Card.Footer className="text-muted">Submitted by: {` ${this.props.poi.author}`}</Card.Footer>
       </Card>

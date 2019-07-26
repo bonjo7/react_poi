@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { Carousel } from 'react-bootstrap';
-import image from '/home/bethomps/Dropbox/HDipCS/ICT Skills2/bernard-thompson-20020038-poi-react/src/images/wd.png'
+import image from './wd.jpg';
+import "./carousel.css";
 
 export default class CarouselHeader extends Component {
     render(){
@@ -20,7 +21,7 @@ export default class CarouselHeader extends Component {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src=""
+      src={image}
       alt="Second slide"
     />
 
@@ -32,7 +33,7 @@ export default class CarouselHeader extends Component {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src=""
+      src={image}
       alt="Third slide"
     />
 
