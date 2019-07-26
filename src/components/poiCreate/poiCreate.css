@@ -5,6 +5,10 @@ form{
     padding: 10px;
 }
 
-h3, label {
+label {
     color: #428bca;
+}
+
+.accordion {
+    min-width: 100%;
 }

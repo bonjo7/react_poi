@@ -1,5 +1,5 @@
 .card{
-    margin-top: 10px; 
+    margin-top: 5px; 
     margin-left: 4%;
     width: 28%;
 }
@@ -14,8 +14,4 @@ a:hover
      color:#0060B6; 
      text-decoration:none; 
      cursor:pointer;  
-}
-
-li{
-    display: inline;
 }

@@ -4,7 +4,7 @@ import CarouselHeader from './components/carouselHeader';
 import API from './dataStore/stubAPI';
 import AddPOI from './components/poiCreate';
 import _ from 'lodash';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row} from 'react-bootstrap';
 
 export default class App extends Component {
   addPoi = (type, name, author, description, latitute, longitude, admission) => {
@@ -26,10 +26,10 @@ export default class App extends Component {
         <CarouselHeader />        
         </Row>
         <Row>
-        <POIList poi={pois} upvoteHandler={this.incrementUpvote} />              
+          <AddPOI handleAdd={this.addPoi} />          
         </Row>
         <Row>
-          <AddPOI handleAdd={this.addPoi} />          
+        <POIList poi={pois} upvoteHandler={this.incrementUpvote} />              
         </Row>
       </Container> 
     );

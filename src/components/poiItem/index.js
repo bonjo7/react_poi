@@ -3,6 +3,7 @@ import './poiItem.css';
 import "../../fontawesome";
 import { Card} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import TextTruncate from 'react-text-truncate';
 
 
 export default class PoiItem extends Component {
@@ -18,9 +19,16 @@ export default class PoiItem extends Component {
           <Card.Title>{` ${this.props.poi.name}`}</Card.Title>
           <Card.Img variant="top" src={this.props.poi.image.thumbnail} />
           <Card.Text>
-            {this.props.poi.description}
+            <TextTruncate
+              line={5}
+              element="span"
+              truncateText="…"
+              text={this.props.poi.description}
+              textTruncateChild={<a href="#">See more</a>}
+            />
+            
           </Card.Text>
-
+          
       <Card.Link onClick={this.handleVote}><FontAwesomeIcon icon={["fas", "heart"]} color="red" size="lg" />
               {` ${this.props.poi.upvotes}`}</Card.Link>
              

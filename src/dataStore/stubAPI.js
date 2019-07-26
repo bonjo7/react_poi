@@ -87,7 +87,7 @@ class StubAPI {
         return this.pois;
     }
 
-    add(type, image, name, author, description, latitude, longitude, admission) {
+    add(type, name, author, description, latitude, longitude, admission) {
         let id = 1;
         let last = _.last(this.pois);
         if (last) {
@@ -96,7 +96,6 @@ class StubAPI {
         let len = this.pois.length;
         let newLen = this.pois.push({
             type,
-            image,
             name,
             author,
             description,
@@ -104,7 +103,8 @@ class StubAPI {
             longitude,
             admission,
             comments: [],
-            upvotes: 0
+            upvotes: 0,
+            image: {}
         });
         return newLen > len;
     }
