@@ -10,5 +10,10 @@ label {
 }
 
 .accordion {
+    margin-top: 5px; 
     min-width: 100%;
 }
+
+/* .card{
+    width: 100%;
+} */

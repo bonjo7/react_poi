@@ -16,6 +16,11 @@ export default class App extends Component {
     this.setState({});
   };
 
+  deletePOI = (id) => {
+    API.deletePOI(id); 
+    this.setState({});                          
+};
+
   render() {
 
     let pois = _.sortBy(API.getAll(), poi => -poi.upvotes);
@@ -29,7 +34,7 @@ export default class App extends Component {
           <AddPOI handleAdd={this.addPoi} />          
         </Row>
         <Row>
-        <POIList poi={pois} upvoteHandler={this.incrementUpvote} />              
+        <POIList poi={pois} upvoteHandler={this.incrementUpvote} deleteHandler={this.deletePOI}  />              
         </Row>
       </Container> 
     );

@@ -7,11 +7,12 @@ export default class PoiList extends Component {
       (poi,index) => 
           <PoiItem key={index} 
               poi={poi} 
-              upvoteHandler={this.props.upvoteHandler} /> 
+              upvoteHandler={this.props.upvoteHandler}
+              deleteHandler={this.props.deleteHandler} /> 
       );
     return (
       <div className="container-fluid">
-        <div className="row">{poiCards}</div>
+        <div className="row ">{poiCards}</div>
       </div>
     );
   }

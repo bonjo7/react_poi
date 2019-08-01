@@ -27,7 +27,7 @@ export default class poiCreate extends Component {
 
     return (
 
-          <Accordion >
+          <Accordion>
             <Card className="card shadow lg p-3 mb-5 bg-white rounded" >
               
                 <Accordion.Toggle as={Card.Header} eventKey="0" color="#24a1f5">
@@ -61,17 +61,20 @@ export default class poiCreate extends Component {
               </Form.Group>
 
               <Form.Row>
+                <Col>
                 <Form.Group controlId="latitude">
                   <Form.Label>Latitude</Form.Label>
                   <Form.Control placeholder="0.000000" as="input" value={this.state.latitude} onChange={this.handlelatitudeChange} />
                 </Form.Group>
-
+                </Col>
+                <Col>
                 <Form.Group controlId="longitude">
                   <Form.Label>Longitude</Form.Label>
                   <Form.Control placeholder="0.000000" as="input" value={this.state.longitude} onChange={this.handleLongitudeChange} />
                 </Form.Group>
+                </Col>
               </Form.Row>
-
+              
               <fieldset>
                 <Form.Group as={Row}>
                   <Form.Label>
@@ -113,6 +116,8 @@ export default class poiCreate extends Component {
           </Accordion.Collapse>
         </Card>
       </Accordion>
+
+      
     );
 
 

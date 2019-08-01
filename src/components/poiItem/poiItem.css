@@ -1,7 +1,15 @@
 .card{
-    margin-top: 5px; 
-    margin-left: 4%;
-    width: 28%;
+    margin-top: 10px;
+   
+}
+
+/* #cardstyle{
+    margin: 10px;
+    
+} */
+
+.poi{
+    padding: 10px;
 }
 
 .card a {

@@ -1,11 +1,12 @@
 import _ from "lodash";
+import Reg from './historicRegTower.jpg'
 class StubAPI {
     constructor() {
         this.pois = [
             {
                 id: 1,
                 type: 'Historic',
-                image: { thumbnail: './historicRegTower.jpg' },
+                image: { thumbnail: {Reg} },
                 name: 'Reginalds Tower1',
                 author: 'Bernard Thompson',
                 description: 'Reginald’s Tower is Waterford’s landmark monument and Ireland’s oldest civic building. It has been in continuous use for over 800 years.  The first tower on the site was built by Vikings after 914 and formed the apex of the triangular settlement, an area known to this day as the Viking Triangle.  Re-built by the Anglo Normans in the 12th century the top two floors were added in the 15th century.  Until about 1700 the tower was the strongpoint of the medieval defensive walls that enclosed the city. The tower now houses an exhibition on Viking Waterford and is managed by the Office of Public Works.',
@@ -140,6 +141,11 @@ class StubAPI {
         if (index !== -1) {
             poi.comments[index].upvotes += 1;
         }
+    }
+
+    deletePOI(id) {
+        let elements = _.remove(this.pois, poi => poi.id === id);
+        return elements;
     }
 }
 
