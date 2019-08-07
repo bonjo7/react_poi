@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import _ from 'lodash'
 import api from '../dataStore/stubAPI';
-import ReviewList from './reviewList'
-import ReviewForm from './reviewForm'
+import ReviewList from './reviewList';
+import ReviewForm from './reviewForm';
+import { Container, Row } from 'react-bootstrap';
+import Header from './header';
 
 class ReviewPage extends Component {
     addReview = (name, rating, title, review) => {
@@ -30,16 +32,21 @@ class ReviewPage extends Component {
                 (review) => - review.upvotes
         );
         return (
-          <div className="container">
-            <div className="row">
-              <div className="col-md-9 col-md-offset-1">
-                <h3>{line} </h3>
-                <ReviewList reviews={reviews}
-                    upvoteHandler={this.incrementUpvote } />
-                <ReviewForm poi={poi}  addReviewHandler={this.addReview} />
-              </div>
-            </div>
-          </div>
+        <Container fluid={true} className="test">
+        <Row>
+          <Header />
+        </Row>
+        <Row>
+        <h3>{line} </h3>
+        <h2>{poi.description}</h2>
+        <ReviewList reviews={reviews}
+                   upvoteHandler={this.incrementUpvote } />
+        </Row>
+        
+        <Row>
+        <ReviewForm poi={poi}  addReviewHandler={this.addReview} />
+        </Row>
+      </Container>
         )
     }
 }

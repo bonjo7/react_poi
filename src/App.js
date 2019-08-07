@@ -3,7 +3,6 @@ import POIList from './components/poiList';
 import CarouselHeader from './components/carouselHeader';
 import API from './dataStore/stubAPI';
 import AddPOI from './components/poiCreate';
-import Header from './components/header';
 import Filter from './components/filterPOI';
 import _ from 'lodash';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -48,9 +47,7 @@ export default class App extends Component {
 
     return (
       <Container fluid={true} className="test">
-        <Row>
-          <Header />
-        </Row>
+        
         <Row>
           <CarouselHeader />
         </Row>
