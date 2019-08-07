@@ -3,12 +3,24 @@ import POIList from './components/poiList';
 import CarouselHeader from './components/carouselHeader';
 import API from './dataStore/stubAPI';
 import AddPOI from './components/poiCreate';
+import Header from './components/header';
+import Filter from './components/filterPOI';
 import _ from 'lodash';
-import { Container, Row} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import './App.css'
 
 export default class App extends Component {
-  addPoi = (type, name, author, description, latitute, longitude, admission) => {
-    API.add(type, name, author, description, latitute, longitude, admission);
+
+  state = { search: "", attractionType: "all" };
+
+  handleChange = (type, value) => {
+    type === "name"
+      ? this.setState({ search: value })
+      : this.setState({ attractionType: value });
+  };
+
+  addPoi = (attractionType, name, author, description, latitute, longitude, admission) => {
+    API.add(attractionType, name, author, description, latitute, longitude, admission);
     this.setState({});
   };
   incrementUpvote = (id) => {
@@ -17,26 +29,43 @@ export default class App extends Component {
   };
 
   deletePOI = (id) => {
-    API.deletePOI(id); 
-    this.setState({});                          
-};
+    API.deletePOI(id);
+    this.setState({});
+  };
 
   render() {
 
     let pois = _.sortBy(API.getAll(), poi => -poi.upvotes);
+    let filteredPOIs = pois.filter(p => {
+      const name = `${p.name}`;
+      return name.toLowerCase().search(this.state.search.toLowerCase()) !== -1;
+    });
+    filteredPOIs =
+      this.state.attractionType === "all"
+        ? filteredPOIs
+        : filteredPOIs.filter(p => p.attractionType === this.state.attractionType);
+
 
     return (
-      <Container>
-        <Row>         
-        <CarouselHeader />        
+      <Container fluid={true} className="test">
+        <Row>
+          <Header />
         </Row>
         <Row>
-          <AddPOI handleAdd={this.addPoi} />          
+          <CarouselHeader />
         </Row>
         <Row>
-        <POIList poi={pois} upvoteHandler={this.incrementUpvote} deleteHandler={this.deletePOI}  />              
+          <Col>
+            <AddPOI handleAdd={this.addPoi} />
+          </Col>
+          <Col>
+            <Filter onUserInput={this.handleChange} />
+          </Col>
         </Row>
-      </Container> 
+        <Row>
+          <POIList poi={pois} upvoteHandler={this.incrementUpvote} deleteHandler={this.deletePOI} />
+        </Row>
+      </Container>
     );
   }
 }

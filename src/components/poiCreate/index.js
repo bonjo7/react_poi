@@ -41,12 +41,12 @@ export default class poiCreate extends Component {
                 <Form.Label>Attraction Type</Form.Label>
                 <Form.Control as="select" value={this.state.type} onChange={this.handleTypeChange}  >
                   <option>Choose...</option>
-                  <option>Historic</option>
-                  <option>Beach</option>
-                  <option>Woodlands</option>
-                  <option>Mountains</option>
-                  <option>Outdoor Activity</option>
-                  <option>Food and Drink</option>
+                  <option value="historic">Historic</option>
+                    <option value="Beach">Beach</option>
+                    <option value="Woodlands">Woodlands</option>
+                    <option value="Mountains">Mountains</option>
+                    <option value="Outdoor Activity">Outdoor Activity</option>
+                    <option value="Food and Drink">Food and Drink</option>
                 </Form.Control>
               </Form.Group>
 
@@ -109,9 +109,9 @@ export default class poiCreate extends Component {
                 </Form.Group>
               </fieldset>
 
-              <Button variant="primary" type="submit" onClick={this.handleSubmit}>
+              <Accordion.Toggle as={Button} eventKey="1" variant="primary" type="submit" onClick={this.handleSubmit}>
                 Submit POI
-              </Button>
+              </Accordion.Toggle>
             </Form>
           </Accordion.Collapse>
         </Card>

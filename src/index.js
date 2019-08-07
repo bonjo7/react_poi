@@ -1,13 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import ReviewPage from "./components/reviewPage";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const Router = (props) => {
+    return (
+      <BrowserRouter>
+        <div className="jumbotron">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-md-6 offset-3">
+                <h1>
+                  <Link to="/">Waterford POI</Link>
+                </h1>
+              </div>
+            </div>
+          </div>
+          <Switch>
+            <Route path="/pois/:poi_id" component={ReviewPage} />
+            <Route exact path="/" component={App} />
+            <Redirect from="*" to="/" />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  };
+  
+  ReactDOM.render(<Router />, document.getElementById("root"));

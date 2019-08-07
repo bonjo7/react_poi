@@ -5,7 +5,7 @@ class StubAPI {
         this.pois = [
             {
                 id: 1,
-                type: 'Historic',
+                attractionType: 'Historic',
                 image: { thumbnail: {Reg} },
                 name: 'Reginalds Tower1',
                 author: 'Bernard Thompson',
@@ -13,12 +13,12 @@ class StubAPI {
                 latitude: '',
                 longitude: '',
                 admission: 'No',
-                comments: [],
+                reviews: [],
                 upvotes: 1
             },
             {
                 id: 2,
-                type: 'Historic',
+                attractionType: 'Historic',
                 image: { thumbnail: '../src/images/historicRegTower.jpg' },
                 name: 'Reginalds Tower2',
                 author: 'Bernard Thompson',
@@ -26,12 +26,12 @@ class StubAPI {
                 latitude: '',
                 longitude: '',
                 admission: 'No',
-                comments: [],
+                reviews: [],
                 upvotes: 1
             },
             {
                 id: 3,
-                type: 'Historic',
+                attractionType: 'Historic',
                 image: { thumbnail: '../src/images/historicRegTower.jpg' },
                 name: 'Reginalds Tower3',
                 author: 'Bernard Thompson',
@@ -39,12 +39,12 @@ class StubAPI {
                 latitude: '',
                 longitude: '',
                 admission: 'No',
-                comments: [],
+                reviews: [],
                 upvotes: 1
             },
             {
                 id: 4,
-                type: 'Historic',
+                attractionType: 'Historic',
                 image: { thumbnail: '../src/images/historicRegTower.jpg' },
                 name: 'Reginalds Tower4',
                 author: 'Bernard Thompson',
@@ -52,12 +52,12 @@ class StubAPI {
                 latitude: '',
                 longitude: '',
                 admission: 'No',
-                comments: [],
+                reviews: [],
                 upvotes: 1
             },
             {
                 id: 5,
-                type: 'Historic',
+                attractionType: 'Historic',
                 image: { thumbnail: '../src/images/historicRegTower.jpg' },
                 name: 'Reginalds Tower5',
                 author: 'Bernard Thompson',
@@ -65,12 +65,12 @@ class StubAPI {
                 latitude: '',
                 longitude: '',
                 admission: 'No',
-                comments: [],
+                reviews: [],
                 upvotes: 1
             },
             {
                 id: 6,
-                type: 'Historic',
+                attractionType: 'Historic',
                 image: { thumbnail: '../src/images/historicRegTower.jpg' },
                 name: 'Reginalds Tower6',
                 author: 'Bernard Thompson',
@@ -78,7 +78,7 @@ class StubAPI {
                 latitude: '',
                 longitude: '',
                 admission: 'No',
-                comments: [],
+                reviews: [],
                 upvotes: 1
             }
         ];
@@ -88,7 +88,7 @@ class StubAPI {
         return this.pois;
     }
 
-    add(type, name, author, description, latitude, longitude, admission) {
+    add(attractionType, name, author, description, latitude, longitude, admission) {
         let id = 1;
         let last = _.last(this.pois);
         if (last) {
@@ -96,14 +96,14 @@ class StubAPI {
         }
         let len = this.pois.length;
         let newLen = this.pois.push({
-            type,
+            attractionType,
             name,
             author,
             description,
             latitude,
             longitude,
             admission,
-            comments: [],
+            reviews: [],
             upvotes: 0,
             image: {}
         });
@@ -125,27 +125,41 @@ class StubAPI {
         return result;
     }
 
-    addComment(poiId, c, n) {
+    addReview(poiId, n, s, t, r) {
         let poi = this.getPoi(poiId);
         let id = 1;
-        let last = _.last(poi.comments);
+        let last = _.last(poi.reviews);
         if (last) {
             id = last.id + 1;
         }
-        poi.comments.push({ id: id, comment: c, author: n, upvotes: 0 });
+        poi.reviews.push({ id: id, author: n, rating: s, title: t,  review: r,  upvotes: 0 });
     }
 
-    upvoteComment(poiId, commentId) {
+    upvoteReview(poiId, reviewId) {
         let poi = this.getPoi(poiId);
-        let index = _.findIndex(poi.comments, c => c.id === commentId);
+        let index = _.findIndex(poi.reviews, r => r.id === reviewId);
         if (index !== -1) {
-            poi.comments[index].upvotes += 1;
+            poi.reviews[index].upvotes += 1;
         }
     }
 
     deletePOI(id) {
         let elements = _.remove(this.pois, poi => poi.id === id);
         return elements;
+    }
+
+    editPOI(id, attractionType, name, description, latitude, longitude, admission) {
+        let index = _.findIndex(this.pois, poi => poi.id === id);
+        if (index !== -1) {
+        this.pois[index].attractionType = attractionType;
+        this.pois[index].name = name;
+        this.pois[index].description = description;
+        this.pois[index].latitude= latitude;
+        this.pois[index].longitude = longitude;
+        this.pois[index].admission = admission;
+        return true;
+        }
+        return false;
     }
 }
 
