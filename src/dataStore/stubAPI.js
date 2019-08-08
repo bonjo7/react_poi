@@ -1,96 +1,21 @@
 import _ from "lodash";
-import Reg from './historicRegTower.jpg'
 class StubAPI {
     constructor() {
-        this.pois = [
-            {
-                id: 1,
-                attractionType: 'Historic',
-                image: { thumbnail: { Reg } },
-                name: 'Reginalds Tower1',
-                author: 'Bernard Thompson',
-                description: 'Reginald’s Tower is Waterford’s landmark monument and Ireland’s oldest civic building. It has been in continuous use for over 800 years.  The first tower on the site was built by Vikings after 914 and formed the apex of the triangular settlement, an area known to this day as the Viking Triangle.  Re-built by the Anglo Normans in the 12th century the top two floors were added in the 15th century.  Until about 1700 the tower was the strongpoint of the medieval defensive walls that enclosed the city. The tower now houses an exhibition on Viking Waterford and is managed by the Office of Public Works.',
-                latitude: '52.246502',
-                longitude: '-7.142379',
-                admission: 'No',
-                reviews: [
-                    {
-                        id: 1,
-                        title: "Great attraction",
-                        rating: 3,
-                        author: "Chloe Thompson",
-                        review: "Good day out, brought the kids and they enjoyed it, we had a ball",
-                        upvotes: 10
-                    }
-                ],
-                upvotes: 15
-            },
-            {
-                id: 2,
-                attractionType: 'Historic',
-                image: { thumbnail: '../src/images/historicRegTower.jpg' },
-                name: 'Reginalds Tower2',
-                author: 'Bernard Thompson',
-                description: 'Reginald’s Tower is Waterford’s landmark monument and Ireland’s oldest civic building. It has been in continuous use for over 800 years.  The first tower on the site was built by Vikings after 914 and formed the apex of the triangular settlement, an area known to this day as the Viking Triangle.  Re-built by the Anglo Normans in the 12th century the top two floors were added in the 15th century.  Until about 1700 the tower was the strongpoint of the medieval defensive walls that enclosed the city. The tower now houses an exhibition on Viking Waterford and is managed by the Office of Public Works.',
-                latitude: '',
-                longitude: '',
-                admission: 'No',
-                reviews: [],
-                upvotes: 1
-            },
-            {
-                id: 3,
-                attractionType: 'Historic',
-                image: { thumbnail: '../src/images/historicRegTower.jpg' },
-                name: 'Reginalds Tower3',
-                author: 'Bernard Thompson',
-                description: 'Reginald’s Tower is Waterford’s landmark monument and Ireland’s oldest civic building. It has been in continuous use for over 800 years.  The first tower on the site was built by Vikings after 914 and formed the apex of the triangular settlement, an area known to this day as the Viking Triangle.  Re-built by the Anglo Normans in the 12th century the top two floors were added in the 15th century.  Until about 1700 the tower was the strongpoint of the medieval defensive walls that enclosed the city. The tower now houses an exhibition on Viking Waterford and is managed by the Office of Public Works.',
-                latitude: '',
-                longitude: '',
-                admission: 'No',
-                reviews: [],
-                upvotes: 1
-            },
-            {
-                id: 4,
-                attractionType: 'Historic',
-                image: { thumbnail: '../src/images/historicRegTower.jpg' },
-                name: 'Reginalds Tower4',
-                author: 'Bernard Thompson',
-                description: 'Reginald’s Tower is Waterford’s landmark monument and Ireland’s oldest civic building. It has been in continuous use for over 800 years.  The first tower on the site was built by Vikings after 914 and formed the apex of the triangular settlement, an area known to this day as the Viking Triangle.  Re-built by the Anglo Normans in the 12th century the top two floors were added in the 15th century.  Until about 1700 the tower was the strongpoint of the medieval defensive walls that enclosed the city. The tower now houses an exhibition on Viking Waterford and is managed by the Office of Public Works.',
-                latitude: '',
-                longitude: '',
-                admission: 'No',
-                reviews: [],
-                upvotes: 1
-            },
-            {
-                id: 5,
-                attractionType: 'Historic',
-                image: { thumbnail: '../src/images/historicRegTower.jpg' },
-                name: 'Reginalds Tower5',
-                author: 'Bernard Thompson',
-                description: 'Reginald’s Tower is Waterford’s landmark monument and Ireland’s oldest civic building. It has been in continuous use for over 800 years.  The first tower on the site was built by Vikings after 914 and formed the apex of the triangular settlement, an area known to this day as the Viking Triangle.  Re-built by the Anglo Normans in the 12th century the top two floors were added in the 15th century.  Until about 1700 the tower was the strongpoint of the medieval defensive walls that enclosed the city. The tower now houses an exhibition on Viking Waterford and is managed by the Office of Public Works.',
-                latitude: '',
-                longitude: '',
-                admission: 'No',
-                reviews: [],
-                upvotes: 1
-            },
-            {
-                id: 6,
-                attractionType: 'Historic',
-                image: { thumbnail: '../src/images/historicRegTower.jpg' },
-                name: 'Reginalds Tower6',
-                author: 'Bernard Thompson',
-                description: 'Reginald’s Tower is Waterford’s landmark monument and Ireland’s oldest civic building. It has been in continuous use for over 800 years.  The first tower on the site was built by Vikings after 914 and formed the apex of the triangular settlement, an area known to this day as the Viking Triangle.  Re-built by the Anglo Normans in the 12th century the top two floors were added in the 15th century.  Until about 1700 the tower was the strongpoint of the medieval defensive walls that enclosed the city. The tower now houses an exhibition on Viking Waterford and is managed by the Office of Public Works.',
-                latitude: '',
-                longitude: '',
-                admission: 'No',
-                reviews: [],
-                upvotes: 1
+        this.pois = [];
+    }
+
+    getPoi(id) {
+        let index = _.findIndex(this.pois, poi => poi.id === id);
+        if (index !== -1) {
+            return this.pois[index];
             }
-        ];
+            return null;
+        // let result = index !== -1 ? this.pois[index] : null;
+        // return result;
+    }
+
+    initialize(pois) {
+        this.pois = pois;
     }
 
     getAll() {
@@ -126,12 +51,6 @@ class StubAPI {
             return true;
         }
         return false;
-    }
-
-    getPoi(id) {
-        let index = _.findIndex(this.pois, poi => poi.id === id);
-        let result = index !== -1 ? this.pois[index] : null;
-        return result;
     }
 
     addReview(poiId, n, s, t, r) {

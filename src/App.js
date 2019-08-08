@@ -6,9 +6,24 @@ import AddPOI from './components/poiCreate';
 import Filter from './components/filterPOI';
 import _ from 'lodash';
 import { Container, Row, Col } from 'react-bootstrap';
-import './App.css'
+import './App.css';
+import request from "superagent";
 
 export default class App extends Component {
+
+  componentDidMount() {
+    let url = 'http://localhost:3001/pois/'
+    request.get(url).end((error, res) => {
+    if (res) {
+        let { results: pois } = JSON.parse(res.text);
+        API.initialize(pois);
+        this.setState({});
+        console.log('api added ' + url)
+    } else {
+        console.log(error);
+    }
+    });
+}
 
   state = { search: "", attractionType: "all" };
 

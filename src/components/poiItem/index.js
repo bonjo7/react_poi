@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './poiItem.css';
 import "../../fontawesome";
-import { Card, Modal, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TextTruncate from 'react-text-truncate';
 import { Link } from 'react-router-dom';
@@ -47,7 +47,7 @@ export default class PoiItem extends Component {
               element="span"
               truncateText="…"
               text={this.props.poi.description}
-              textTruncateChild={<a href="#">See more</a>}
+              textTruncateChild={<Link to={`/pois/${this.props.poi.id}` }>See More...</Link>}
             />
           
           <Card.Text> </Card.Text>
