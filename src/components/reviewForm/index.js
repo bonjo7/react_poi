@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Accordion, Card } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class ReviewForm extends Component {
 
@@ -36,7 +37,14 @@ export default class ReviewForm extends Component {
 
   render() {
     return (
+      <Accordion>
+        <Card className="card shadow lg p-3 mb-5 bg-white rounded" >
+          <Accordion.Toggle as={Card.Header} eventKey="0" color="#24a1f5">
+            Add a Review<FontAwesomeIcon className="ml-3" icon={["fas", "chevron-down"]} color="#24a1f5" size="lg" />
+          </Accordion.Toggle>
 
+
+          <Accordion.Collapse eventKey="0">
       <Form>
         <Form.Group controlId="reviewName">
           <Form.Label>Name</Form.Label>
@@ -64,10 +72,13 @@ export default class ReviewForm extends Component {
             onChange={this.handleReviewChange} />
         </Form.Group>
 
-        <Button variant="primary" type="submit" onClick={this.onSubmit}>
+        <Accordion.Toggle as={Button} eventKey="1" variant="primary" type="submit" onClick={this.onSubmit}>
           Submit
-        </Button>
+        </Accordion.Toggle>
       </Form>
+      </Accordion.Collapse>
+        </Card>
+      </Accordion>
     );
   }
 }

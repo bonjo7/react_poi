@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PoiItem from "../poiItem/";
+import { Row, Container} from 'react-bootstrap';
 
 export default class PoiList extends Component {
   render() {
@@ -11,9 +12,9 @@ export default class PoiList extends Component {
               deleteHandler={this.props.deleteHandler} /> 
       );
     return (
-      <div className="container-fluid">
-        <div className="row ">{poiCards}</div>
-      </div>
+      <Container fluid={true}>
+        <Row>{poiCards}</Row>
+      </Container>
     );
   }
 }

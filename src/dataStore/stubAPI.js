@@ -6,15 +6,24 @@ class StubAPI {
             {
                 id: 1,
                 attractionType: 'Historic',
-                image: { thumbnail: {Reg} },
+                image: { thumbnail: { Reg } },
                 name: 'Reginalds Tower1',
                 author: 'Bernard Thompson',
                 description: 'Reginald’s Tower is Waterford’s landmark monument and Ireland’s oldest civic building. It has been in continuous use for over 800 years.  The first tower on the site was built by Vikings after 914 and formed the apex of the triangular settlement, an area known to this day as the Viking Triangle.  Re-built by the Anglo Normans in the 12th century the top two floors were added in the 15th century.  Until about 1700 the tower was the strongpoint of the medieval defensive walls that enclosed the city. The tower now houses an exhibition on Viking Waterford and is managed by the Office of Public Works.',
-                latitude: '',
-                longitude: '',
+                latitude: '52.246502',
+                longitude: '-7.142379',
                 admission: 'No',
-                reviews: [],
-                upvotes: 1
+                reviews: [
+                    {
+                        id: 1,
+                        title: "Great attraction",
+                        rating: 3,
+                        author: "Chloe Thompson",
+                        review: "Good day out, brought the kids and they enjoyed it, we had a ball",
+                        upvotes: 10
+                    }
+                ],
+                upvotes: 15
             },
             {
                 id: 2,
@@ -132,7 +141,7 @@ class StubAPI {
         if (last) {
             id = last.id + 1;
         }
-        poi.reviews.push({ id: id, author: n, rating: s, title: t,  review: r,  upvotes: 0 });
+        poi.reviews.push({ id: id, author: n, rating: s, title: t, review: r, upvotes: 0 });
     }
 
     upvoteReview(poiId, reviewId) {
@@ -151,13 +160,13 @@ class StubAPI {
     editPOI(id, attractionType, name, description, latitude, longitude, admission) {
         let index = _.findIndex(this.pois, poi => poi.id === id);
         if (index !== -1) {
-        this.pois[index].attractionType = attractionType;
-        this.pois[index].name = name;
-        this.pois[index].description = description;
-        this.pois[index].latitude= latitude;
-        this.pois[index].longitude = longitude;
-        this.pois[index].admission = admission;
-        return true;
+            this.pois[index].attractionType = attractionType;
+            this.pois[index].name = name;
+            this.pois[index].description = description;
+            this.pois[index].latitude = latitude;
+            this.pois[index].longitude = longitude;
+            this.pois[index].admission = admission;
+            return true;
         }
         return false;
     }

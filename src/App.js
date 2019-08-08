@@ -46,7 +46,7 @@ export default class App extends Component {
 
 
     return (
-      <Container fluid={true} className="test">
+      <Container fluid={true}>
         
         <Row>
           <CarouselHeader />

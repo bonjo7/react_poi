@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
 import App from './App';
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
-import ReviewPage from "./components/reviewPage";
+import POIPage from "./components/fullPoiPage";
 import { Container, Navbar } from 'react-bootstrap';
 
 const Router = (props) => {
@@ -15,7 +15,7 @@ const Router = (props) => {
                 
                 </Navbar> 
           <Switch>
-            <Route path="/pois/:poi_id" component={ReviewPage} />
+            <Route path="/pois/:poi_id" component={POIPage} />
             <Route exact path="/" component={App} />
             <Redirect from="*" to="/" />
           </Switch>
