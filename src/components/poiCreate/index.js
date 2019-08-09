@@ -5,11 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class poiCreate extends Component {
 
+  state = { attractionType: '', name: '', author: '', description: '', latitute: '', longitude: '', admission: '' };
 
-
-  state = { type: '', name: '', author: '', description: '', latitute: '', longitude: '', admission: '' };
-
-  handleTypeChange = (e) => this.setState({ type: e.target.value });
+  handleTypeChange = (e) => this.setState({ attractionType: e.target.value });
   handleNameChange = (e) => this.setState({ name: e.target.value });
   handleAuthorChange = (e) => this.setState({ author: e.target.value });
   handleDescriptionChange = (e) => this.setState({ description: e.target.value });
@@ -19,8 +17,8 @@ export default class poiCreate extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.handleAdd(this.state.type, this.state.name, this.state.author, this.state.description, this.state.latitude, this.state.longitude, this.state.admission)
-    this.setState({ type: '', name: '', author: '', description: '', latitute: '', longitude: '', admission: '' })
+    this.props.handleAdd(this.state.attractionType, this.state.name, this.state.author, this.state.description, this.state.latitude, this.state.longitude, this.state.admission)
+    this.setState({ attractionType: '', name: '', author: '', description: '', latitute: '', longitude: '', admission: '' })
   }
 
   render() {
@@ -37,7 +35,7 @@ export default class poiCreate extends Component {
 
           <Accordion.Collapse eventKey="0">
             <Form >
-              <Form.Group controlId="type">
+              <Form.Group controlId="attractionType">
                 <Form.Label>Attraction Type</Form.Label>
                 <Form.Control as="select" value={this.state.type} onChange={this.handleTypeChange}  >
                   <option>Choose...</option>

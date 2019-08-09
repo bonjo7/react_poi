@@ -35,12 +35,12 @@ export default class PoiItem extends Component {
   render() {
 
     return (
-      <Card className="text-center shadow lg p-3 mb-5 mt-5 col-md-4 poi">
+      <Card className="itemCard text-center shadow lg p-3 mb-5 mt-5 col-md-4 poi">
         
         <Card.Header>{` ${this.props.poi.attractionType}`}</Card.Header>
         <Card.Body>
           <Card.Title>{` ${this.props.poi.name}`}</Card.Title>
-          <Card.Img variant="top" src={this.props.poi.image.thumbnail} />
+          <Card.Img className="cardImage shadow" variant="top" src={this.props.poi.image} />
           
             <TextTruncate
               line={5}
@@ -54,8 +54,9 @@ export default class PoiItem extends Component {
       <Card.Link onClick={this.handleVote}><FontAwesomeIcon icon={["fas", "heart"]} color="red" size="lg" />
               {` ${this.props.poi.upvotes}`}</Card.Link>
              
-              <Card.Link> <Link to={`/pois/${this.props.poi.id}` }><FontAwesomeIcon icon={["fas", "comments"]} color="#24a1f5" size="lg" /></Link> </Card.Link>
-
+              <Card.Link></Card.Link>
+              <Link to={`/pois/${this.props.poi.id}` }><FontAwesomeIcon icon={["fas", "comments"]} color="#24a1f5" size="lg" /></Link>
+              <Card.Link></Card.Link>
               <Card.Link ><FontAwesomeIcon icon={["fas", "edit"]} color="#9bd4e4" size="lg" /> 
               
       </Card.Link>

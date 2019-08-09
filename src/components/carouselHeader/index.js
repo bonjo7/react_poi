@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { Carousel } from 'react-bootstrap';
 import waterford from './wd.png';
 import tramore from './tramore.png';
+import mountains from './mountains.png';
 import "./carousel.css";
 
 export default class CarouselHeader extends Component {
@@ -34,13 +35,13 @@ export default class CarouselHeader extends Component {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src={tramore}
+      src={mountains}
       alt="Third slide"
     />
 
     <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <h3>Commeragh Mountains</h3>
+      <p>Take ot the hills and explore from above</p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

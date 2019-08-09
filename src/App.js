@@ -12,12 +12,13 @@ import request from "superagent";
 export default class App extends Component {
 
   componentDidMount() {
-    let url = 'http://localhost:3001/pois/'
+    let url = 'http://localhost:3001/pois'
     request.get(url).end((error, res) => {
     if (res) {
-        let { results: pois } = JSON.parse(res.text);
+        let pois = JSON.parse(res.text);
         API.initialize(pois);
         this.setState({});
+        
         console.log('api added ' + url)
     } else {
         console.log(error);
@@ -76,6 +77,7 @@ export default class App extends Component {
         </Row>
         <Row>
           <POIList poi={pois} upvoteHandler={this.incrementUpvote} deleteHandler={this.deletePOI} />
+          
         </Row>
       </Container>
     );

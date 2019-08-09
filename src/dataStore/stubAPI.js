@@ -10,8 +10,6 @@ class StubAPI {
             return this.pois[index];
             }
             return null;
-        // let result = index !== -1 ? this.pois[index] : null;
-        // return result;
     }
 
     initialize(pois) {
@@ -30,6 +28,7 @@ class StubAPI {
         }
         let len = this.pois.length;
         let newLen = this.pois.push({
+            id,
             attractionType,
             name,
             author,

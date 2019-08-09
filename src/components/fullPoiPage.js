@@ -29,22 +29,20 @@ class ReviewPage extends Component {
     render() {
         let poiId = this.getId()
         let poi = api.getPoi(poiId);
-        let line = poi.link ?
-            <a href={poi.link}>{poi.name} </a> :
-            <span>{poi.name} </span>;
+       
         let reviews = _.sortBy(poi.reviews,
             (review) => - review.upvotes
         );
 
-        const location = `lng:${poi.longitude}, lat:${poi.latitude}`;
-
+        const location = { lng: poi.longitude, lat: poi.latitude };;
+        
         return (
             <Container fluid={true}>
 
                 <Card bg="light" className="cardFullPOI" >
                     <Card.Header>{poi.attractionType}</Card.Header>
                     <Card.Body>
-                        <Card.Title>{line}</Card.Title>
+                        <Card.Title>{poi.name}</Card.Title>
                         <Card.Text>
                             <Row>
                                 <Col>

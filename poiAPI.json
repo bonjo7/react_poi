@@ -1,26 +1,70 @@
-{
-  "pois": [
-      {
-  "id": 1,
-  "attractionType": "Historic",
-  "image": "",
-  "name": "Reginalds Tower1",
-  "author": "Bernard Thompson",
-  "description": "Reginald’s Tower is Waterford’s landmark monument and Ireland’s oldest civic building. It has been in continuous use for over 800 years.  The first tower on the site was built by Vikings after 914 and formed the apex of the triangular settlement, an area known to this day as the Viking Triangle.  Re-built by the Anglo Normans in the 12th century the top two floors were added in the 15th century.  Until about 1700 the tower was the strongpoint of the medieval defensive walls that enclosed the city. The tower now houses an exhibition on Viking Waterford and is managed by the Office of Public Works.",
-  "latitude": "52.246502",
-  "longitude": "-7.1423792",
-  "admission": "No",
-  "reviews": [
-      {
-          "id": 1,
-          "title": "Great attraction",
-          "rating": 3,
-          "author": "Chloe Thompson",
-          "review": "Good day out, brought the kids and they enjoyed it, we had a ball",
-          "upvotes": 10
-      }
-  ],
-  "upvotes": 15
-}
+{  
+  "pois": [  
+     {  
+        "id":1,
+        "attractionType":"Historic",
+        "image":"https://i.ibb.co/F59XY5Q/historic-Reg-Tower.jpg",
+        "name":"Reginalds Tower",
+        "author":"Bernard Thompson",
+        "description":"Reginald’s Tower is Waterford’s landmark monument and Ireland’s oldest civic building. It has been in continuous use for over 800 years.  The first tower on the site was built by Vikings after 914 and formed the apex of the triangular settlement, an area known to this day as the Viking Triangle.  Re-built by the Anglo Normans in the 12th century the top two floors were added in the 15th century.  Until about 1700 the tower was the strongpoint of the medieval defensive walls that enclosed the city. The tower now houses an exhibition on Viking Waterford and is managed by the Office of Public Works.",
+        "latitude": 52.260498,
+        "longitude": -7.1076092,
+        "admission":"No",
+        "reviews":[  
+           {  
+              "id":1,
+              "title":"Great attraction",
+              "rating":3,
+              "author":"Chloe Thompson",
+              "review":"Good day out, brought the kids and they enjoyed it, we had a ball",
+              "upvotes":10
+           }
+        ],
+        "upvotes":15
+     },
+     {  
+      "id":2,
+      "attractionType":"Mountains",
+      "image":"https://i.ibb.co/fXSC8Dq/mountain-Lake.png",
+      "name":"Coumshingaun",
+      "author":"Bernard Thompson",
+      "description":"Coumshingaun Loop Walk is a moderate 4 hour (7.5 km) walking route around a natural amphitheatre of splendour and silence, the Coumshingaun Corrie Lake and the surrounding mountains in County Waterford, Ireland. Coumshingaun is one of the finest examples of a corrie or coum in Europe and the Comeragh mountains most famous landmark. Corries were formed by glacier movement during the ice age",
+      "latitude": 52.2503,
+      "longitude": -7.5247,
+      "admission":"No",
+      "reviews":[  
+         {  
+            "id":1,
+            "title":"Great attraction",
+            "rating":3,
+            "author":"Chloe Thompson",
+            "review":"Good day out, brought the kids and they enjoyed it, we had a ball",
+            "upvotes":10
+         }
+      ],
+      "upvotes":32
+      },
+      {  
+         "id":3,
+         "attractionType":"Outdoor Activity",
+         "image":"https://i.ibb.co/jLj2F8F/bilberry.png",
+         "name":"Greenway - Bilberry",
+         "author":"Bernard Thompson",
+         "description":"The Waterford Greenway is a spectacular 46km off-road cycling and walking trail along an old railway line between Waterford and Dungarvan. Enjoy a beautiful journey across three tall viaducts from the river to the sea.",
+         "latitude": 52.2685294,
+         "longitude": -7.15282,
+         "admission":"No",
+         "reviews":[  
+            {  
+               "id":1,
+               "title":"Great attraction",
+               "rating":3,
+               "author":"Chloe Thompson",
+               "review":"Good day out, brought the kids and they enjoyed it, we had a ball",
+               "upvotes":10
+            }
+         ],
+         "upvotes":8
+         }
   ]
 }
