@@ -34,10 +34,10 @@ export default class poiCreate extends Component {
              
 
           <Accordion.Collapse eventKey="0">
-            <Form >
+            <Form className="createForm" >
               <Form.Group controlId="attractionType">
                 <Form.Label>Attraction Type</Form.Label>
-                <Form.Control as="select" value={this.state.type} onChange={this.handleTypeChange}  >
+                <Form.Control name="attractionType" as="select" value={this.state.type} onChange={this.handleTypeChange}  >
                   <option>Choose...</option>
                   <option value="historic">Historic</option>
                     <option value="Beach">Beach</option>
@@ -50,12 +50,12 @@ export default class poiCreate extends Component {
 
               <Form.Group controlId="name">
                 <Form.Label>Attraction Name</Form.Label>
-                <Form.Control placeholder="Attraction Name" as="input" value={this.state.name} onChange={this.handleNameChange} />
+                <Form.Control name="attractionName" placeholder="Attraction Name" as="input" value={this.state.name} onChange={this.handleNameChange} />
               </Form.Group>
 
               <Form.Group controlId="description">
                 <Form.Label>Attraction Name</Form.Label>
-                <Form.Control placeholder="Attraction Name" as="textarea" rows="5" value={this.state.description} onChange={this.handleDescriptionChange} />
+                <Form.Control name="attractionDescription" placeholder="Attraction Description" as="textarea" rows="5" value={this.state.description} onChange={this.handleDescriptionChange} />
               </Form.Group>
 
               <Form.Row>
