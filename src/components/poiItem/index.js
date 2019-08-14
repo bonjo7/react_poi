@@ -60,10 +60,9 @@ export default class PoiItem extends Component {
               <Card.Link ><FontAwesomeIcon icon={["fas", "edit"]} color="#9bd4e4" size="lg" /> 
               
       </Card.Link>
-
+            
               <Card.Link onClick={this.handleDelete}><FontAwesomeIcon icon={["fas", "trash-alt"]} color="red" size="lg" /> </Card.Link>
              
-          
           
         </Card.Body>
         <Card.Footer className="text-muted">Submitted by: {` ${this.props.poi.author}`}</Card.Footer>

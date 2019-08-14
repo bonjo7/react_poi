@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import Header from "../src/components/header/";
 import POICreate from '../src/components/poiCreate';
 import POIItem from '../src/components/poiItem';
 import POIList from '../src/components/poiList';
@@ -10,11 +11,13 @@ import FilterPOI from '../src/components/filterPOI';
 import ReviewForm from "../src/components/reviewForm";
 import Review from "../src/components/review";
 import ReviewList from "../src/components/reviewList";
+import LoginForm from "../src/components/authentication/loginForm";
+import { MemoryRouter } from "react-router";
 
 const poi = {
     id: 1,
-    type: 'Historic',
-    image: { thumbnail: '../src/images/historicRegTower.jpg' },
+    attractionType: 'Historic',
+    image: "https://i.ibb.co/F59XY5Q/historic-Reg-Tower.jpg",
     name: 'Reginalds Tower',
     author: 'Bernard Thompson',
     description: 'Reginald’s Tower is Waterford’s landmark monument and Ireland’s oldest civic building. It has been in continuous use for over 800 years.  The first tower on the site was built by Vikings after 914 and formed the apex of the triangular settlement, an area known to this day as the Viking Triangle.  Re-built by the Anglo Normans in the 12th century the top two floors were added in the 15th century.  Until about 1700 the tower was the strongpoint of the medieval defensive walls that enclosed the city. The tower now houses an exhibition on Viking Waterford and is managed by the Office of Public Works.',
@@ -23,16 +26,26 @@ const poi = {
     upvotes: 1
 };
 
+storiesOf("POI APP/Header", module)
+  .addDecorator(story => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => <Header />);
+
 storiesOf("POI APP/Carousel", module).add("default", () => <CarouselHeader />);
 
 storiesOf("POI APP/Create POI", module).add("default", () => <POICreate />);
 
 storiesOf("POI APP/FIlter POI", module).add("default", () => <FilterPOI />);
 
-storiesOf('POI APP/POI Item', module).add('list a single POI', () => <POIItem poi={poi} upvoteHandler={action("upvoted")} deleteHandler={action('Delete confirmed') } />
+storiesOf('POI APP/POI Item', module).addDecorator(story => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  )).add('list a single POI', () => <POIItem poi={poi} upvoteHandler={action("upvoted")} deleteHandler={action('Delete confirmed') } />
 )
 
-storiesOf('POI APP/POI List', module).add('A list of POIs', () => {
+storiesOf('POI APP/POI List', module).addDecorator(story => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  )).add('A list of POIs', () => {
     const pois = [poi, poi, poi, poi, poi, poi]
     return <POIList poi={pois} />
 });
@@ -65,3 +78,11 @@ storiesOf("POI APP/Review page/Review list", module).add("default", () => {
         <ReviewList upvoteHandler={action("upvoted")} reviews={defaultReviews} />
     );
 });    
+
+storiesOf("POI APP/Login Form", module)
+  .addDecorator(story => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => (
+    <LoginForm />
+  ));

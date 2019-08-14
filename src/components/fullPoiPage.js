@@ -9,6 +9,7 @@ import './fullPoi.css';
 import Map from './map';
 import env from '../env.json';
 
+
 class ReviewPage extends Component {
 
 
@@ -71,7 +72,10 @@ class ReviewPage extends Component {
                                 />
                                 </Col>
                             </Row>
-                        </Card.Text>
+                            </Card.Text>
+                            
+                            
+                        
                     </Card.Body>
                 </Card>
 
