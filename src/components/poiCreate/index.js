@@ -62,7 +62,7 @@ export default class poiCreate extends Component {
                 <Col>
                 <Form.Group controlId="latitude">
                   <Form.Label>Latitude</Form.Label>
-                  <Form.Control placeholder="0.000000" as="input" value={this.state.latitude} onChange={this.handlelatitudeChange} />
+                  <Form.Control placeholder="0.000000" as="input" value={this.state.latitude} onChange={this.handleLatitudeChange} />
                 </Form.Group>
                 </Col>
                 <Col>

@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom';
 
 export default class PoiItem extends Component {
 
-  
-
   state = {
     status: "",
     attractionType: this.props.poi.attractionType,
@@ -57,9 +55,10 @@ export default class PoiItem extends Component {
               <Card.Link></Card.Link>
               <Link to={`/pois/${this.props.poi.id}` }><FontAwesomeIcon icon={["fas", "comments"]} color="#24a1f5" size="lg" /></Link>
               <Card.Link></Card.Link>
-              <Card.Link ><FontAwesomeIcon icon={["fas", "edit"]} color="#9bd4e4" size="lg" /> 
+              <Card.Link></Card.Link>
+              <Link to={`/admin/${this.props.poi.id}`} ><FontAwesomeIcon icon={["fas", "edit"]} color="#9bd4e4" size="lg" /> </Link>
               
-      </Card.Link>
+              <Card.Link></Card.Link>
             
               <Card.Link onClick={this.handleDelete}><FontAwesomeIcon icon={["fas", "trash-alt"]} color="red" size="lg" /> </Card.Link>
              

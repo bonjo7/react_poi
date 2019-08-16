@@ -1,0 +1,14 @@
+form{
+    margin-top: 50px; 
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 10px;
+}
+
+label {
+    color: #428bca;
+}
+
+.buttons{
+    margin-left: 10px;
+}
