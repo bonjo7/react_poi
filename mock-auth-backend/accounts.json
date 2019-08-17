@@ -1,0 +1,7 @@
+[
+    {
+        "identifier": "admin@waterfordpoi.ie",
+        "password": "secret",
+        "roles": ["admin"]
+    }
+]
