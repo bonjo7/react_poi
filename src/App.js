@@ -11,6 +11,8 @@ import request from "superagent";
 
 export default class App extends Component {
 
+  state = { search: "", attractionType: "all" };
+
   componentDidMount() {
     let url = 'http://localhost:3001/pois'
     request.get(url).end((error, res) => {
@@ -25,8 +27,6 @@ export default class App extends Component {
     }
     });
 }
-
-  state = { search: "", attractionType: "all" };
 
   handleChange = (type, value) => {
     type === "name"
@@ -59,7 +59,7 @@ export default class App extends Component {
       this.state.attractionType === "all"
         ? filteredPOIs
         : filteredPOIs.filter(p => p.attractionType === this.state.attractionType);
-
+        let sortedPOIs = _.sortBy(filteredPOIs, p => p.name);
 
     return (
       <Container fluid={true}>
@@ -76,7 +76,7 @@ export default class App extends Component {
           </Col>
         </Row>
         <Row>
-          <POIList poi={pois} upvoteHandler={this.incrementUpvote} deleteHandler={this.deletePOI} />
+          <POIList poi={sortedPOIs} upvoteHandler={this.incrementUpvote} deleteHandler={this.deletePOI} />
           
         </Row>
       </Container>

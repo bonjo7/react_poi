@@ -10,7 +10,7 @@ import Map from './map';
 import env from '../env.json';
 
 
-class ReviewPage extends Component {
+class fullPOIPage extends Component {
 
 
     addReview = (name, rating, title, review) => {
@@ -88,4 +88,4 @@ class ReviewPage extends Component {
     }
 }
 
-export default withRouter(ReviewPage);
+export default withRouter(fullPOIPage);

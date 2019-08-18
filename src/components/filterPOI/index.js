@@ -32,7 +32,7 @@ export default class FilterPOI extends Component {
               </Form.Group>
 
               <Form.Group controlId="attractionType">
-                <Form.Control as="select" type="text" onChange={this.handlAattractionTypeChange}  >
+                <Form.Control id="attractionType" as="select" type="text" onChange={this.handlAattractionTypeChange}  >
                   <option value="all">All</option>
                   <option value="Historic">Historic</option>
                   <option value="Beach">Beach</option>

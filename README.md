@@ -19,7 +19,7 @@ User's should also be able to filter POI's based on their category (mountains, h
 
 - Render all Points of Interests (Working)
 - Add a point of interest (Working)
-- Filter POI's (Not working, UI available)
+- Filter POI's (Name seacrh working, attraction Type not working)
 - Full informaiton on POI (working)
 - Add a love to a POI (Working)
 - Admin login, authentication (Working)
@@ -243,6 +243,11 @@ password: secret
 ## Independent learning.
 
 I spent most of my independent learning on the front end as front end is an area that I really enjoy. I explored [Ant Design](https://ant.design/docs/react/introduce "Ant Design Components"), this is a very feature rich component library. I like the option to open components in `codepen` allowing to try refactor the code to apply any chnages that you may require while having a live view of the component. I also explored [Bootstrap React](https://react-bootstrap.github.io/components/alerts "Bootstrap Components") which I finally settled on, the reason why, to display ant design in storybook, there were a bit more work involved where as react bootstrap worked straight out of the box. 
+
+## Known Bugs
+- When POI is created and you navigate away from POI page and return to list POI's the newly created POI is removed.
+- When logged in as admin, edit/delete is not working. If adming tries to login after being logged out without being on the homepage, the poi will not be rendered due to an issue with obtaining the POI id
+- Refreshing the page on a POI will render with an error, due to getting reviews from a POI
 
 
 [stories]: ./images/stories.png
