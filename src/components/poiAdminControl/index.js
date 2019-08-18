@@ -11,7 +11,6 @@ class poiAdminControl extends Component {
     state = { 
         attractionType: this.props.attractionType, 
         name: this.props.name, 
-        author: this.props.author, 
         description: this.props.description, 
         latitute: this.props.latitude, 
         longitude: this.props.longitude, 
@@ -20,7 +19,6 @@ class poiAdminControl extends Component {
         previousDetails: {
             attractionType: this.props.attractionType, 
             name: this.props.name, 
-            author: this.props.author, 
             description: this.props.description, 
             latitute: this.props.latitude, 
             longitude: this.props.longitude, 
@@ -32,7 +30,6 @@ class poiAdminControl extends Component {
 
     handleTypeChange = e => this.setState({ attractionType: e.target.value });
     handleNameChange = e => this.setState({ name: e.target.value });
-    handleAuthorChange = e => this.setState({ author: e.target.value });
     handleDescriptionChange = e => this.setState({ description: e.target.value });
     handleLatitudeChange = e => this.setState({ latitude: e.target.value });
     handleLongitudeChange = e => this.setState({ longitude: e.target.value });
@@ -51,15 +48,15 @@ class poiAdminControl extends Component {
         if (!updatedAttractionType || !updatedName || !updatedDescription || !updatedLatitude || updatedLongitude || updatedAdmissionFee) {
         return;
         }
-        let { attractionType, name, author, description, latitude, longitude, admission } = this.state;
-        this.setState({ previousDetails: { attractionType, name, author, description, latitude, longitude, admission } });
+        let { attractionType, name, description, latitude, longitude, admission } = this.state;
+        this.setState({ previousDetails: { attractionType, name, description, latitude, longitude, admission } });
         api.update(this.state.previousDetails.id, updatedAttractionType, updatedName);
     
       };
 
       handleCancel = () => {
-        let { attractionType, name, author, description, latitude, longitude, admission } = this.state.previousDetails;
-        this.setState({ attractionType, name, author, description, latitude, longitude, admission  });
+        let { attractionType, name, description, latitude, longitude, admission } = this.state.previousDetails;
+        this.setState({ attractionType, name, description, latitude, longitude, admission  });
       };
 
       handleDelete = () => this.props.deleteHandler(this.props.poi.id);
