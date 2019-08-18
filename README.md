@@ -249,6 +249,7 @@ I spent most of my independent learning on the front end as front end is an area
 - When logged in as admin, edit/delete is not working. If adming tries to login after being logged out without being on the homepage, the poi will not be rendered due to an issue with obtaining the POI id
 - Refreshing the page on a POI will render with an error, due to getting reviews from a POI
 - FIlteringPOI not working for category type but is for name search
+- After bug fix on filterPOI now POI's are not sorting by number of loves.
 
 
 [stories]: ./images/stories.png
