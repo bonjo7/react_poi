@@ -13,7 +13,7 @@ User's should also have the ability to love a POI by selecting a love heart wher
 <br /><br />
 As well as this user's should also be able to add a rating and review on the POI, ratings from 1-5, with one meaning they would not recommoned and five meaning they would highly recommend. They should also be able to write a description about why the gave their rating score. Other users may like a user review with the highest amount of likes on a review being displayed first.
 <br /><br />
-User's should also be able to filter POI's based on their category (mountains, historic, outdoor activity, food etc...)
+User's should also be able to filter POI's based on their name or category (mountains, historic, outdoor activity, food etc...)
 
 ### List of user features
 
@@ -248,6 +248,7 @@ I spent most of my independent learning on the front end as front end is an area
 - When POI is created and you navigate away from POI page and return to list POI's the newly created POI is removed.
 - When logged in as admin, edit/delete is not working. If adming tries to login after being logged out without being on the homepage, the poi will not be rendered due to an issue with obtaining the POI id
 - Refreshing the page on a POI will render with an error, due to getting reviews from a POI
+- FIlteringPOI not working for category type but is for name search
 
 
 [stories]: ./images/stories.png
