@@ -81,7 +81,7 @@ Run the application
   ```
 
   This is required in oder to successfully work google maps, if not complete the application will not start as the reference within the application to the `env.json` file will fail to exist
-
+- Before completing the next step ensure your are back in the `react_poi` folder `cd ..`
 - Once dependenices are installed and your google api has been added to the newly create `env.json` file run the application
 `npm start`
   - The application should now be running on at the followinfgaddress `localhost:3000`
